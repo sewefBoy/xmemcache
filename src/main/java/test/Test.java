@@ -2,6 +2,7 @@ package test;
 
 
 import com.cn.sqlite.SQLiteJDBC;
+import com.cn.threadMonitor.Monitor;
 
 public class Test {
 	public static void main(String[] args) {
@@ -13,6 +14,14 @@ public class Test {
 		
 		
 		//redis
+		
+		
+		//Monitor
+		String[] _taskIds = new String[200];
+		for(int i=0; i< _taskIds.length; i++) {
+			_taskIds[i] = String.valueOf(i);
+		}
+		Monitor.getInstance().addCreateWaitTaskOrStart(_taskIds);
 		
 	}
 }
